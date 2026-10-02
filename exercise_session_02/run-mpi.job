@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=cpi-mpi
+#SBATCH --account=uzh8
+#SBATCH --partition=debug
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=128
+#SBATCH --cpus-per-task=1
+#SBATCH --hint=nomultithread
+#SBATCH --output=mpi-output.log
+#SBATCH --error=mpi-errors.log
+#SBATCH --uenv=prgenv-gnu/26.3:v1
+#SBATCH --view=default
+#SBATCH --open-mode=truncate
+set -e
+
+srun ./cpi_mpi
