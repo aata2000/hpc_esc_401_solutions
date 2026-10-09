@@ -1,0 +1,32 @@
+===== O0 =====
+THREADS=1
+sum=10022429073.341873
+Computed in 4.992 seconds
+THREADS=2
+sum=10022429072.974625
+Computed in 2.497 seconds
+THREADS=4
+sum=10022429071.947245
+Computed in 1.254 seconds
+THREADS=16
+sum=10022429072.218266
+Computed in 0.3176 seconds
+THREADS=64
+sum=10022429072.122816
+Computed in 0.1861 seconds
+===== O3 =====
+THREADS=1
+sum=10022429073.341873
+Computed in 1.085 seconds
+THREADS=2
+sum=10022429072.974625
+Computed in 0.5443 seconds
+THREADS=4
+sum=10022429071.947245
+Computed in 0.2787 seconds
+THREADS=16
+sum=10022429072.218266
+Computed in 0.1162 seconds
+THREADS=64
+sum=10022429072.122816
+Computed in 0.1558 seconds

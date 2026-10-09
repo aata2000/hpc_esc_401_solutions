@@ -1,0 +1,27 @@
+#!/bin/bash -l
+#SBATCH --account=uzh8
+#SBATCH --job-name="sum-openmp"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=64
+#SBATCH --partition=debug
+#SBATCH --constraint=mc
+#SBATCH --output=sum_openmp.log
+#SBATCH --error=sum_openmp_errors.log
+
+echo "===== O0 ====="
+for n in 1 2 4 16 64
+do
+    export OMP_NUM_THREADS=$n
+    echo "THREADS=$n"
+    srun --cpu-bind=none ./sum_O0_omp
+done
+
+echo "===== O3 ====="
+for n in 1 2 4 16 64
+do
+    export OMP_NUM_THREADS=$n
+    echo "THREADS=$n"
+    srun --cpu-bind=none ./sum_O3_omp
+done

@@ -1,0 +1,23 @@
+#!/bin/bash -l
+#SBATCH --account=uzh8
+#SBATCH --job-name="sum-opts"
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=debug
+#SBATCH --constraint=mc
+#SBATCH --output=sum_serial.log
+#SBATCH --error=sum_serial_errors.log
+
+echo "===== O0 ====="
+srun ./sum_O0
+
+echo "===== O1 ====="
+srun ./sum_O1
+
+echo "===== O2 ====="
+srun ./sum_O2
+
+echo "===== O3 ====="
+srun ./sum_O3
